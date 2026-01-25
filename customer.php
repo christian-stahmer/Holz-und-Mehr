@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/includes/footer.php'; 
+
  require __DIR__ . '/includes/header.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -42,3 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <input type="file" name="file">
 <button>Senden</button>
 </form>
+<?php
+require __DIR__ . '/includes/footer.php'; 
+?>

@@ -1,6 +1,6 @@
 <?php
 session_start(); require 'db.php';
-require __DIR__ . '/includes/footer.php'; 
+
  require __DIR__ . '/includes/header.php';
 
 if($_POST){
@@ -20,3 +20,6 @@ if($_POST){
 <input name="pass" type="password" placeholder="Passwort">
 <button>Login</button>
 </form>
+<?php
+require __DIR__ . '/includes/footer.php'; 
+?>

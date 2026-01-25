@@ -1,3 +1,6 @@
+<?php
+require __DIR__ . '/includes/header.php'; 
+?>
 <a href="user_create.php">Benutzer anlegen</a><br><br>
 
 <?php
@@ -9,7 +12,7 @@ if (!isset($_SESSION['u'])) {
 
 require 'db.php';
 require __DIR__ . '/lang.php';
-require __DIR__ . '/includes/footer.php'; 
+
 
 $db = getDB();
 
@@ -54,3 +57,6 @@ $result = $db->query("SELECT * FROM orders ORDER BY id DESC");
 <hr>
 <?php endwhile; ?>
 
+<?php
+require __DIR__ . '/includes/footer.php'; 
+?>

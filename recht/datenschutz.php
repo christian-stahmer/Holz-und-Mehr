@@ -7,6 +7,7 @@
 body{background:#121212;color:#fff;font-family:Arial;padding:40px;}
 h1,h2{color:#2d89ef;}
 </style>
+<link rel="icon" href="/logo/favicon.ico">
 </head>
 <body>
 

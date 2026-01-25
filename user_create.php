@@ -1,8 +1,11 @@
 <?php
+require __DIR__ . '/includes/header.php';
+?>
+<?php
 session_start();
 require 'db.php';
-require __DIR__ . '/includes/footer.php'; 
- require __DIR__ . '/includes/header.php';
+
+ 
 
 if (!isset($_SESSION['u']) || $_SESSION['u']['role'] !== 'GF') {
     die('Kein Zugriff');
@@ -41,3 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <button>Erstellen</button>
 </form>
+<?php
+require __DIR__ . '/includes/footer.php'; 
+?>

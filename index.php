@@ -1,15 +1,16 @@
-<?php
-require __DIR__ . '/includes/footer.php'; 
-require __DIR__ . '/includes/test.php';
-
-?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <link rel="icon" type="image/png" href="logo/logo.png">
-
     <meta charset="UTF-8">
     <title>Auftragssystem – Start</title>
+
+    <!-- WICHTIG für Handy -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <?php
+require __DIR__ . '/includes/header.php';
+?>
+
     <style>
         body {
             margin: 0;
@@ -19,21 +20,24 @@ require __DIR__ . '/includes/test.php';
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            padding: 15px;
         }
 
         .container {
             background: #1e1e1e;
-            padding: 40px;
+            padding: 30px;
             border-radius: 10px;
-            width: 400px;
+            width: 100%;
+            max-width: 420px;
             text-align: center;
             box-shadow: 0 0 15px rgba(0,0,0,0.5);
         }
 
         h1 {
-            margin-bottom: 30px;
-            font-size: 24px;
+            margin-bottom: 25px;
+            font-size: 22px;
+            line-height: 1.4;
         }
 
         .btn {
@@ -45,7 +49,7 @@ require __DIR__ . '/includes/test.php';
             color: #fff;
             background: #2d89ef;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             text-decoration: none;
         }
@@ -62,24 +66,30 @@ require __DIR__ . '/includes/test.php';
             background: #666;
         }
 
-        
+        /* Handy-Optimierung */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+            .btn {
+                font-size: 15px;
+                padding: 14px;
+            }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Willkommen im Auftragssystem von der Schülerfirma Holz und Mehr</h1>
+    <h1>Willkommen im Auftragssystem<br>der Schülerfirma Holz und Mehr</h1>
 
-    <a href="customer.php" class="btn">
-        Auftrag erstellen
-    </a>
-
-    <a href="login.php" class="btn secondary">
-        Mitarbeiter-Login
-    </a>
-
-   
+    <a href="customer.php" class="btn">Auftrag erstellen</a>
+    <a href="login.php" class="btn secondary">Mitarbeiter-Login</a>
 </div>
+
+<?php
+require __DIR__ . '/includes/footer.php';
+?>
 
 </body>
 </html>
