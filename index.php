@@ -15,7 +15,7 @@ require __DIR__ . '/includes/header.php';
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #121212;
+            background: #252424;
             color: #ffffff;
             display: flex;
             justify-content: center;
@@ -25,13 +25,13 @@ require __DIR__ . '/includes/header.php';
         }
 
         .container {
-            background: #1e1e1e;
+            background: #272727;
             padding: 30px;
             border-radius: 10px;
             width: 100%;
             max-width: 420px;
             text-align: center;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px rgba(19, 18, 18, 0.5);
         }
 
         h1 {
