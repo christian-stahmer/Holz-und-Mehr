@@ -14,12 +14,7 @@
             
             
         }   
-
-    </style>
-    <div class="header">
-    <p>test</p>
-
-    </div>
+     </style>
      <div></div>
          <link rel="icon" href="/logo/favicon.ico">
 </head>
@@ -27,6 +22,7 @@
 <body>
     <div class="header">
     <p>test</p>
+    <a href=""></a>
 
     </div>
 </body>

@@ -3,7 +3,8 @@
     
     <a href="/recht/impressum.php">Impressum</a> ·
     <a href="/recht/datenschutz.php">Datenschutz</a> ·
-    <a href="/recht/agb.php">AGB</a>
+    <a href="/recht/agb.php">AGB</a> ·
+    <a href="/danke/">Danksagung</a>
      © <?= date('Y') ?> Holz und mehr
 </footer>
 
