@@ -1,3 +1,5 @@
+<?php
+    require __DIR__ . '/../includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -40,3 +42,5 @@ Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der
 <a href="/index.php">zuruck zum anfang</a>
 </body>
 </html>
+<?php
+    require __DIR__ . '/../includes/footer.php'; ?>

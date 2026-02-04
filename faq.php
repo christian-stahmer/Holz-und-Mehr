@@ -5,7 +5,7 @@
     <title>FAQ – Auftragssystem</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/logo/favicon.ico">
+    <link rel="icon" href="/logo/favicon.jpg">
 
     <style>
         body {

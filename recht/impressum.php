@@ -1,3 +1,5 @@
+<?php
+    require __DIR__ . '/../includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -35,3 +37,5 @@ Max Mustermann
 <a href="/index.php">zuruck zum anfang</a>
 </body>
 </html>
+<?php
+    require __DIR__ . '/../includes/footer.php'; ?>

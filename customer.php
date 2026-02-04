@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <link rel="stylesheet" href="assets/css/style.css">
 <form method="post" enctype="multipart/form-data">
+    <TITLE>Auftrag</TITLE>
 <h2>Auftrag</h2>
 <input name="name" placeholder="Name" required>
 <input name="email" type="email" placeholder="E-Mail" required>

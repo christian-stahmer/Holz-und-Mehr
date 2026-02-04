@@ -1,4 +1,7 @@
 
+<?php
+    require __DIR__ . '/../includes/header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -31,4 +34,7 @@ Es gelten die gesetzlichen Bestimmungen.
     <a href="/index.php">zuruck zum anfang</a>
 </body>
 </html>
+
+<?php
+    require __DIR__ . '/../includes/footer.php'; ?>
 

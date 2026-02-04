@@ -1,3 +1,6 @@
+<?php
+require __DIR__ . '/includes/header.php';
+?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,10 +9,8 @@
 
     <!-- WICHTIG für Handy -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <?php
-require __DIR__ . '/includes/header.php';
-?>
+    
+   
 
     <style>
         body {
@@ -84,7 +85,10 @@ require __DIR__ . '/includes/header.php';
     <h1>Willkommen im Auftragssystem<br>der Schülerfirma Holz und Mehr</h1>
 
     <a href="customer.php" class="btn">Auftrag erstellen</a>
+    <a href="infos.php" class="btn">Infos</a>
+    <a href="/shop" class="btn">Shop</a>
     <a href="login.php" class="btn secondary">Mitarbeiter-Login</a>
+    
 </div>
 
 <?php
