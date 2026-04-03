@@ -1,17 +1,39 @@
-
+<!-- WICHTIG für Handy -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
     require __DIR__ . '/../includes/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="de">
 <head>
+   
 <meta charset="UTF-8">
 <title>Allgemeine Geschäftsbedingungen</title>
 <style>
 body{background:#121212;color:#fff;font-family:Arial;padding:40px;}
 h1,h2{color:#2d89ef;}
+.btn {
+    width: 100%;
+    max-width: 320px; /* 👈 wichtig für „mittig“-Look */
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    background: #2d89ef;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+        .btn:hover {
+            background: #1b5fa7;
+        }
+
 </style>
-<link rel="icon" href="/logo/favicon.ico">
+
 </head>
 <body>
 
@@ -31,7 +53,8 @@ Ein Vertrag kommt zustande, sobald der Auftrag bestätigt wird.
 <p>
 Es gelten die gesetzlichen Bestimmungen.
 </p>
-    <a href="/index.php">zuruck zum anfang</a>
+<br>
+<a href="/../index.php" class="btn">zur Startseite</a>
 </body>
 </html>
 

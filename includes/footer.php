@@ -5,15 +5,18 @@
     <a href="/recht/datenschutz.php">Datenschutz</a> ·
     <a href="/recht/agb.php">AGB</a> ·
     <a href="/danke/">Danksagung</a> ·
-    <a href="/faq.php/">Fragen</a>
-     © <?= date('Y') ?> Holz und mehr
+    <a href="/faq.php/">Fragen   </a>
+    <br>
+    © <?= date('Y') ?> Holz und Mehr
 </footer>
 
-   
+   <!-- WICHTIG für Handy -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
 
 <style>
     .footer {
+        left: 0;
     position: fixed;
     bottom: 15px;
     width: 100%;

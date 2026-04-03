@@ -1,4 +1,6 @@
 <?php
+    require __DIR__ . '/../../includes/header.php'; ?>
+    <?php
 session_start();
 if(!isset($_SESSION['gf'])) exit;
 require '../db.php';
@@ -11,9 +13,12 @@ $s->bindValue(3,$_POST['price']);
 $s->execute();
 }
 ?>
+<link rel="stylesheet" href="/../../assets/css/style.css">
 <form method="post">
 <input name="name" placeholder="Name">
 <textarea name="desc"></textarea>
 <input name="price" type="number" step="0.01">
 <button>Speichern</button>
 </form>
+<?php
+    require __DIR__ . '/../../includes/footer.php'; ?>

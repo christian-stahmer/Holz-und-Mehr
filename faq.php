@@ -7,64 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/logo/favicon.jpg">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #121212;
-            color: #ffffff;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.5);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-        }
-
-        .faq-question {
-            font-weight: bold;
-            cursor: pointer;
-            padding: 15px;
-            background: #2a2a2a;
-            border-radius: 6px;
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 15px;
-            background: #191919;
-            border-left: 3px solid #2d89ef;
-            margin-top: 5px;
-            border-radius: 0 0 6px 6px;
-        }
-
-        .back {
-            display: block;
-            margin-top: 30px;
-            text-align: center;
-            color: #2d89ef;
-            text-decoration: none;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/style.css">
 
     <script>
         function toggleFAQ(id) {
@@ -114,7 +57,7 @@
         </div>
     </div>
 
-    <a href="/index.php" class="back">← Zurück zur Startseite</a>
+    <a href="/index.php" class="btn">← Zurück zur Startseite</a>
 </div>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>

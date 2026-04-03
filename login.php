@@ -1,48 +1,52 @@
+<!-- WICHTIG für Handy -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 session_start();
-$error = ""; // <<< WICHTIG
- require 'db.php';
-require __DIR__ . '/includes/header.php'; 
- 
+require __DIR__ . '/db.php';
 
-if($_POST){
- $db=getDB();
- $s=$db->prepare("SELECT * FROM users WHERE username=?");
- $s->bindValue(1,$_POST['user']); $r=$s->execute()->fetchArray();
- if($r && password_verify($_POST['pass'],$r['password'])){
-   $_SESSION['u']=$r;
-   header("Location: dashboard.php"); exit;
- }
- else {
-    
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $db = getDB();
+    $user = trim($_POST['user']);
+    $pass = $_POST['pass'];
+
+    $stmt = $db->prepare("SELECT * FROM users WHERE username = :u");
+    $stmt->bindValue(':u', $user, SQLITE3_TEXT);
+    $res = $stmt->execute()->fetchArray(SQLITE3_ASSOC);
+
+    if ($res && password_verify($pass, $res['password'])) {
+        $_SESSION['user_id'] = $res['id'];
+        $_SESSION['username'] = $res['username'];
+        $_SESSION['role'] = strtoupper(trim($res['role']));
+        header("Location: orders.php");
+        exit;
+    } else {
         $error = "❌ Benutzername oder Passwort falsch";
-    
     }
 }
+require __DIR__ . '/includes/header.php';
 ?>
-<style>
-  .error {
-    background: #ffdddd;
-    color: #900;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #cc0000;
-    border-radius: 5px;
-}
-</style>
-
 
 <link rel="stylesheet" href="/assets/css/style.css">
+
 <form method="post">
-<h2>Login</h2>
-<title>lOGIN</title>
-<input name="user" placeholder="Benutzername">
-<input name="pass" type="password" placeholder="Passwort">
-<button>Login</button>
+    <input name="user" placeholder="Benutzername" required>
+    <input name="pass" type="password" placeholder="Passwort" required>
+    <button>Login</button>
+    <br>
+    <br>
+    <br>
+    
+    <a href="index.php" class="btn">zur Startseite</a>
+</form>
+<br>
+<br>
+
+
+
 <?php if ($error): ?>
 <div class="error"><?= htmlspecialchars($error) ?></div>
 <?php endif; ?>
-</form>
-<?php
-require __DIR__ . '/includes/footer.php'; 
-?>
+
+<?php require __DIR__ . '/includes/footer.php'; ?>

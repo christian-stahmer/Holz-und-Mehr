@@ -1,16 +1,18 @@
 <?php
 session_start();
-if (!isset($_SESSION['dev'])) {
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'DEV') {
     header("Location: login.php");
     exit;
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <title>DEV Dashboard</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/../assets/css/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>

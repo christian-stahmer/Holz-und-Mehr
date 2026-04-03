@@ -1,39 +1,42 @@
 <?php
 session_start();
-require 'db.php';
+require __DIR__ . '/db.php';
 
-$error = "";
+$error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = getDB();
+    $user = trim($_POST['user']);
+    $pass = $_POST['pass'];
 
-    $s = $db->prepare("SELECT * FROM users WHERE username = ?");
-    $s->bindValue(1, $_POST['user'], SQLITE3_TEXT);
-    $r = $s->execute()->fetchArray(SQLITE3_ASSOC);
+    $stmt = $db->prepare("SELECT * FROM users WHERE username = :u");
+    $stmt->bindValue(':u', $user, SQLITE3_TEXT);
+    $res = $stmt->execute()->fetchArray(SQLITE3_ASSOC);
 
-    if ($r && password_verify($_POST['pass'], $r['password'])) {
-        $_SESSION['u'] = $r;
+    if ($res && password_verify($pass, $res['password'])) {
+        $_SESSION['user_id'] = $res['id'];
+        $_SESSION['username'] = $res['username'];
+        $_SESSION['role'] = strtoupper(trim($res['role']));
         header("Location: index.php");
         exit;
     } else {
         $error = "❌ Benutzername oder Passwort falsch";
     }
 }
+require __DIR__ . '/../includes/header.php';
 ?>
 
-<?php require __DIR__ . '/../includes/header.php'; ?>
+<link rel="stylesheet" href="/../assets/css/style.css">
 
-<form method="post" class="login-box">
-    <h2>Login</h2>
-
+<h2>Login</h2>
+<form method="post">
     <input name="user" placeholder="Benutzername" required>
     <input name="pass" type="password" placeholder="Passwort" required>
-
-    <button type="submit">Login</button>
-
-    <?php if ($error): ?>
-        <div class="error"><?= htmlspecialchars($error) ?></div>
-    <?php endif; ?>
+    <button>Login</button>
 </form>
+
+<?php if ($error): ?>
+<div class="error"><?= htmlspecialchars($error) ?></div>
+<?php endif; ?>
 
 <?php require __DIR__ . '/../includes/footer.php'; ?>

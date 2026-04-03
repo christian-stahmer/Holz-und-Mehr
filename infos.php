@@ -1,3 +1,5 @@
+<!-- WICHTIG für Handy -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +10,22 @@
 <body>
     <link rel="stylesheet" href="assets/css/style.css">
 </body>
-<h1>Hallo Wir Sind die Schülerfirma  Holz und Mehr</h1>
-<p></p>
+<div class="info-box">
+    <h2>Über Holz und Mehr</h2>
+    <p>
+        <strong>Holz und Mehr</strong> ist eine Schülerfirma, die sich auf handwerkliche
+        Arbeiten rund um Holz spezialisiert hat. Wir fertigen individuelle Holzarbeiten
+        mit Sorgfalt, Präzision und viel Engagement.
+    </p>
+    <p>
+        Unser Ziel ist es, hochwertige Leistungen zu fairen Preisen anzubieten und dabei
+        Zuverlässigkeit, Nachhaltigkeit und Kundenzufriedenheit in den Mittelpunkt zu stellen.
+    </p>
+    <br>
+    <a href="index.php" class="btn">zur Startseite</a>
+</div>
 <!-- ende -->
-<a href="index.php">zur Startseite</a>
+
 </html>
 <?php
 
