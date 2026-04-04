@@ -1,5 +1,5 @@
 <?php
-    require __DIR__ . '/../includes/header.php'; ?>
+    require __DIR__ . '/includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
