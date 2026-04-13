@@ -47,6 +47,7 @@ exit;*/
     <a href="infos.php" class="btn">Infos</a>
     <a href="" class="test">SHOP kommt noch</a>
     <a href="login.php" class="btn secondary">Mitarbeiter-Login</a>
+
 </div>
 
 <?php require __DIR__ . '/includes/footer.php'; ?>

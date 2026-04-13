@@ -1,9 +1,7 @@
 <?php
 session_start(); // ✅ IMMER ZUERST
 
-if (!isset($_SESSION['gf']) || $_SESSION['role'] !== 'GF') {
-    die("Kein Zugriff");
-}
+
 
 require __DIR__ . '/../../db.php';
 $db = getDB();
