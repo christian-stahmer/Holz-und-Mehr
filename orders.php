@@ -1,5 +1,3 @@
-<!-- WICHTIG für Handy -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -14,13 +12,16 @@ require __DIR__ . '/includes/header.php';
 /* POST: löschen oder Status ändern */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+
     /* Auftrag löschen */
     if (isset($_POST['delete_id'])) {
         $id = (int)$_POST['delete_id'];
         $stmt = $db->prepare("DELETE FROM orders WHERE id = :id");
         $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
         $stmt->execute();
-        header("Location: " . $_SERVER['PHP_SELF']);
+        
+        // Weiterleitung auf die orders Seite
+        header("Location: https://holzundmehr.kgs-rastede.de/orders"); 
         exit;
     }
 
@@ -62,12 +63,15 @@ $result = $db->query("SELECT * FROM orders ORDER BY id DESC");
         left:10px;
     
     }
+   
+
 </style>
 <h2 class="besellen">Alle Bestellungen</h2>
 
 <div class="butons" style="margin-bottom:15px;">
     <a href="user_create.php"><button>👤 Benutzer erstellen</button></a>
     <a href="/change_password.php"><button>🔑 Passwort ändern</button></a>
+    <a href="login.php"><button>🏠 LOGOUT</button></a>
 </div>
 
 <table border="1" cellpadding="8" cellspacing="0" width="100%">
@@ -75,7 +79,7 @@ $result = $db->query("SELECT * FROM orders ORDER BY id DESC");
         <th>Nummer</th>
         <th>Name</th>
         <th>E-Mail</th>
-        <th>Produkt</th>
+        <th>Produkt (wenn im shop bestellt)</th>
         <th>Menge</th>
         <th>beschreibung</th>
         <th>file</th>
@@ -85,7 +89,7 @@ $result = $db->query("SELECT * FROM orders ORDER BY id DESC");
     </tr>
 
 <?php while ($o = $result->fetchArray(SQLITE3_ASSOC)): ?>
-<tr>
+<tr class="liste">
     <td><?= $o['id'] ?></td>
     <td><?= htmlspecialchars($o['name']) ?></td>
     <td><?= htmlspecialchars($o['email'] ?? '-') ?></td>
@@ -117,7 +121,9 @@ $result = $db->query("SELECT * FROM orders ORDER BY id DESC");
     <td>
         <form method="post" onsubmit="return confirm('Auftrag wirklich löschen?');">
             <button name="delete_id" value="<?= $o['id'] ?>">🗑 Löschen</button>
+            
         </form>
+     
     </td>
 </tr>
 <?php endwhile; ?>

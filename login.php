@@ -1,5 +1,3 @@
-<!-- WICHTIG für Handy -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 session_start();
 require __DIR__ . '/db.php';
@@ -38,7 +36,7 @@ require __DIR__ . '/includes/header.php';
     <br>
     <br>
     
-    <a href="index.php" class="btn">zur Startseite</a>
+    <a href="/" class="btn">zur Startseite</a>
 </form>
 <br>
 <br>

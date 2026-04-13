@@ -1,6 +1,3 @@
-<!-- WICHTIG für Handy -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
 <?php
 // Fehleranzeigen aktivieren (nur für Entwicklung)
  //ini_set('display_errors', 1);
@@ -61,6 +58,9 @@ require __DIR__ . '/includes/header.php';
 <head>
 <meta charset="UTF-8">
 <title>Passwort ändern</title>
+<!-- WICHTIG für Handy -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="center-box">
@@ -83,7 +83,7 @@ require __DIR__ . '/includes/header.php';
         <button type="submit" class="btn-green">Passwort ändern</button>
     </form>
 
-    <a href="dashboard.php" class="back-link">← Zurück</a>
+    <a href="orders.php" class="back-link">← Zurück</a>
 
 </div>
 </body>

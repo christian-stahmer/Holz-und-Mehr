@@ -22,7 +22,7 @@
         Zuverlässigkeit, Nachhaltigkeit und Kundenzufriedenheit in den Mittelpunkt zu stellen.
     </p>
     <br>
-    <a href="index.php" class="btn">zur Startseite</a>
+    <a href="/" class="btn">zur Startseite</a>
 </div>
 <!-- ende -->
 
